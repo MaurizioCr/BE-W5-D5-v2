@@ -7,9 +7,11 @@ import DAO.UtenteService;
 import Entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Component
 public class InizializzazioneDati implements CommandLineRunner {
     @Autowired
     private EdificioService edificioService;
