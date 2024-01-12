@@ -23,9 +23,9 @@ public class Utente {
 
     @ManyToMany
     @JoinTable(
-            name = "postazione_utente",
+            name = "prenotazione_utente",
             joinColumns = @JoinColumn(name = "utente_id"),
-            inverseJoinColumns = @JoinColumn(name = "postazione_id"))
+            inverseJoinColumns = @JoinColumn(name = "prenotazione_id"))
     private List<Postazione> postazione;
 
     @OneToMany(mappedBy = "prenotazione")

@@ -21,15 +21,15 @@ public class Postazione {
     private int maxOccupanti;
     private StatoPostazione statoPostazione;
 
-    @ManyToMany(mappedBy = "postazioniPrenotate")
-    private List<Utente> utente;
+    @ManyToMany(mappedBy = "postazione")
+    private List<Prenotazione> prenotazione;
 
     public Postazione(String descrizione, TipoPostazione tipoPostazione, int maxOccupanti, StatoPostazione statoPostazione, List<Utente> utente, Edificio edificio) {
         this.descrizione = descrizione;
         this.tipoPostazione = tipoPostazione;
         this.maxOccupanti = maxOccupanti;
         this.statoPostazione = statoPostazione;
-        this.utente = utente;
+        this.prenotazione = prenotazione;
         this.edificio = edificio;
     }
 
@@ -61,6 +61,6 @@ public class Postazione {
     }
 
     public void setUtente(List<Utente> utente) {
-        this.utente = utente;
+        this.prenotazione = prenotazione;
     }
 }

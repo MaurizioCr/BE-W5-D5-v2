@@ -47,7 +47,6 @@ public class InizializzazioneDati implements CommandLineRunner {
         utente.setName("Nome");
         utente.setSurname("Cognome");
         utente.setEmail("nome.cognome@example.com");
-        System.out.println("prova");
 
         utenteService.saveUtente(utente);
 

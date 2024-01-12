@@ -19,6 +19,7 @@ public class Prenotazione {
 
     private long id;
     private LocalDate localDate;
+    private LocalDate dataScadenza;
 
     @ManyToMany
     private Postazione postazione;
@@ -33,6 +34,10 @@ public class Prenotazione {
     }
 
     public Prenotazione() {
+    }
+    public Prenotazione(LocalDate dataEmissione) {
+        this.localDate = dataEmissione;
+        this.dataScadenza = dataEmissione.plusDays(1);
     }
 
     public void setLocalDate(LocalDate localDate) {

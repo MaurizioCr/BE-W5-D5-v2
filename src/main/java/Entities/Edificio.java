@@ -25,7 +25,7 @@ public class Edificio {
     private String address;
     private String city;
 
-    @OneToMany (mappedBy = "Edificio")
+    @OneToMany (mappedBy = "edificio")
     private List<Postazione> postazione;
 
     public void setName(String name) {
