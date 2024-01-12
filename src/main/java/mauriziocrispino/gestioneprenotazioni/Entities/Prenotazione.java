@@ -1,8 +1,7 @@
-package Entities;
+package mauriziocrispino.gestioneprenotazioni.Entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDate;
@@ -16,17 +15,17 @@ import java.time.LocalDate;
 public class Prenotazione {
     @Id
     @GeneratedValue
-
     private long id;
     private LocalDate localDate;
     private LocalDate dataScadenza;
 
-    @ManyToMany
+    @ManyToOne
+    @JoinColumn(name = "postazione_id")
     private Postazione postazione;
 
-    @ManyToMany
+    @ManyToOne
+    @JoinColumn(name = "utente_id")
     private Utente utente;
-
     public Prenotazione(LocalDate localDate, Postazione postazione, Utente utente) {
         this.localDate = localDate;
         this.postazione = postazione;

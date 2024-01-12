@@ -1,14 +1,12 @@
-package DAO;
+package mauriziocrispino.gestioneprenotazioni.DAO;
 
-import Entities.Edificio;
-import Entities.Postazione;
-import Entities.TipoPostazione;
+import mauriziocrispino.gestioneprenotazioni.Entities.Postazione;
+import mauriziocrispino.gestioneprenotazioni.Entities.TipoPostazione;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Slf4j
@@ -21,7 +19,7 @@ public class PostazioneService {
         System.out.println("La tua postazione è stata salvata correttamente");
     }
 
-    public List<Postazione> filterByType(TipoPostazione tipoPostazione, String city) {
-        return postazioneDAO.findByTypeAndCity(tipoPostazione, city);
+    public List<Postazione> findByTypeAndCity(TipoPostazione tipoPostazione, String city) {
+        return postazioneDAO.findByTipoPostazioneAndEdificio_City(tipoPostazione, city);
     }
 }

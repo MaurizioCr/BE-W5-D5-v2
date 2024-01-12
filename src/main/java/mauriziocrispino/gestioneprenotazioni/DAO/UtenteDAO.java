@@ -1,6 +1,6 @@
-package DAO;
+package mauriziocrispino.gestioneprenotazioni.DAO;
 
-import Entities.Utente;
+import mauriziocrispino.gestioneprenotazioni.Entities.Utente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

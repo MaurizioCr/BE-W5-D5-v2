@@ -1,4 +1,4 @@
-package Entities;
+package mauriziocrispino.gestioneprenotazioni.Entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,14 +19,14 @@ public class Edificio {
 
     @Id
     @GeneratedValue
-
     private long id;
     private String name;
     private String address;
     private String city;
 
-    @OneToMany (mappedBy = "edificio")
+    @OneToMany(mappedBy = "edificio")
     private List<Postazione> postazione;
+
 
     public void setName(String name) {
         this.name = name;

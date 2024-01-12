@@ -1,9 +1,7 @@
-package Entities;
+package mauriziocrispino.gestioneprenotazioni.Entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -28,8 +26,9 @@ public class Utente {
             inverseJoinColumns = @JoinColumn(name = "prenotazione_id"))
     private List<Postazione> postazione;
 
-    @OneToMany(mappedBy = "prenotazione")
-    List<Prenotazione> prenotazione;
+    @OneToMany(mappedBy = "utente")
+    private List<Prenotazione> prenotazioni;
+
 
     public Utente(String username, String name, String surname, String email, List<Postazione> postazione) {
         this.username = username;
@@ -51,8 +50,8 @@ public class Utente {
         this.username = username;
     }
 
-    public void setPrenotazione(List<Prenotazione> prenotazione) {
-        this.prenotazione = prenotazione;
+    public void setPrenotazioni(List<Prenotazione> prenotazioni) {
+        this.prenotazioni = prenotazioni;
     }
 
     public void setSurname(String surname) {

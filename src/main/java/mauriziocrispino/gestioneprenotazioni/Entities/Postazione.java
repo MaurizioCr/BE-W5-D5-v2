@@ -1,9 +1,7 @@
-package Entities;
+package mauriziocrispino.gestioneprenotazioni.Entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -14,15 +12,18 @@ import java.util.List;
 public class Postazione {
     @Id
     @GeneratedValue
-
     private long id;
     private String descrizione;
     private TipoPostazione tipoPostazione;
     private int maxOccupanti;
     private StatoPostazione statoPostazione;
 
-    @ManyToMany(mappedBy = "postazione")
+    @OneToMany(mappedBy = "postazione")
     private List<Prenotazione> prenotazione;
+
+    @ManyToOne
+    @JoinColumn(name = "edificio_id", nullable = false)
+    private Edificio edificio;
 
     public Postazione(String descrizione, TipoPostazione tipoPostazione, int maxOccupanti, StatoPostazione statoPostazione, List<Utente> utente, Edificio edificio) {
         this.descrizione = descrizione;
@@ -35,10 +36,6 @@ public class Postazione {
 
     public Postazione() {
     }
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Edificio edificio;
 
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;

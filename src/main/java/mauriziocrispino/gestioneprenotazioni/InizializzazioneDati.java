@@ -1,10 +1,9 @@
 package mauriziocrispino.gestioneprenotazioni;
-
-import DAO.EdificioService;
-import DAO.PostazioneService;
-import DAO.PrenotazioneService;
-import DAO.UtenteService;
-import Entities.*;
+import mauriziocrispino.gestioneprenotazioni.DAO.EdificioService;
+import mauriziocrispino.gestioneprenotazioni.DAO.PostazioneService;
+import mauriziocrispino.gestioneprenotazioni.DAO.PrenotazioneService;
+import mauriziocrispino.gestioneprenotazioni.DAO.UtenteService;
+import mauriziocrispino.gestioneprenotazioni.Entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
